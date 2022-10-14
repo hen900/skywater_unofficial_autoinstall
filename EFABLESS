@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+
+if [ "$(sudo docker ps | grep efabless_container)" ]; then
+	if [ "$( zenity  --question --text="Efabless Container is already running, do you wish to restart it?")" ]; then
+		export DESIGNS=/home/adamlab/my-local-design-files
+		sudo docker stop efabless_container
+		sudo docker rm efabless_container
+		sudo docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=adamlab12 -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
+	fi
+
+else
+	sudo docker rm efabless_container
+	export DESIGNS=/home/adamlab/my-local-design-files
+	sudo docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=adamlab12 -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
+
+fi
+
+zenity --info --text="Opening vnc connection to container..."
+vncviewer 127.0.0.1:5901
