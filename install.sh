@@ -59,9 +59,9 @@ echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
 
-sed -i "1s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
+sed -i "1s/^/export CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
-sed -i "1s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
+sed -i "1s/^/export CHSN_PASSWD=$PASS\n /" ./EFABLESS 
 
 cp ./EFABLESS /home/$name/Desktop
 chmod +x /home/$name/Desktop/EFABLESS
