@@ -71,7 +71,6 @@ clear
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
   
-docker pull efabless/foss-asic-tools:latest
   
   
 clear 
