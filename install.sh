@@ -12,16 +12,7 @@ fi
 apt-get -y remove docker docker-engine docker.io containerd runc
 apt-get -y update
 
-apt-get -y install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release \ 
-    git \
-    tigervnc-viewer \
-    make \
-    pip \
-    curl \
+apt-get -y install ca-certificates curl gnupg lsb-release git tigervnc-viewer make pip curl
     
     
 
