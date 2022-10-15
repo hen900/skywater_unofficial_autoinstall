@@ -10,7 +10,7 @@ if [ "$(pkexec docker ps | grep efabless_container)" ]; then
 	fi
 
 else
-	pkexec rm efabless_container
+	pkexec docker rm efabless_container
 	export DESIGNS=$CHSN_PATH
 	pkexec docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=$CHSN_PASSWD -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
 
