@@ -59,14 +59,18 @@ echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
 
-sed -i "1s/^/export CHSN_PATH=$design_PATH\n /" ./EFABLESS 
+sed -i "1s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
-sed -i "1s/^/export CHSN_PASSWD=$PASS\n /" ./EFABLESS 
+sed -i "1s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
 
 cp ./EFABLESS /home/$name/Desktop
-chmod +x /home/$name/Desktop/EFABLESS
-chown $name:$name /home/$name/Desktop/EFABLESS
-  
+chmod +x /home/$name/Desktop/.EFABLESS
+echo "pkexec ./.EFABLESS" > /home/$name/Desktop/start_environment
+
+chmod +x /home/$name/Desktop/start_environment
+chown $name:$name /home/$name/Desktop/start_environment
+chown $name:$name /home/$name/Desktop/.EFABLESS
+ 
 clear
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
