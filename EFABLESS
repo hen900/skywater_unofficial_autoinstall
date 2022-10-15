@@ -1,5 +1,4 @@
-
-read -r -d '' COMMAND <<- EOM
+#!/bin/bash
 
 if [ "$(docker ps | grep efabless_container)" ]; then
 	if [ "$( zenity  --question --text="Efabless Container is already running, do you wish to restart it?")" ]; then
@@ -19,6 +18,3 @@ fi
 zenity --info --text="Opening vnc connection to container..."
 vncviewer 127.0.0.1:5901
 
-EOM
-
-pkexec bash "$(COMMAND)"
