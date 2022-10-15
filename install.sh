@@ -24,7 +24,7 @@ echo \
   apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin 
 
 f=1
-
+clear
 printf "Enter desired name (not path) for skywater design folder: "
 read -r sky_NAME
 
