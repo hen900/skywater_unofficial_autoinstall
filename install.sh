@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-#Docker  nd dependencies 
+#Docker  and dependencies 
 
 #remove old versions
 apt-get -y remove docker docker-engine docker.io containerd runc
@@ -23,9 +23,12 @@ echo \
   apt-get -y update
   apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin 
 
-got_path=1;
+f=1
 
-while  ! [ got_path ]; do 
+printf "Enter desired name (not path) for skywater design folder: "
+read -r sky_NAME
+
+while [ $f -eq 1 ] ; do 
    printf "Enter desired path for design folder: "
 
     read -r design_PATH
@@ -36,9 +39,13 @@ while  ! [ got_path ]; do
     if ! [ -d "$design_PATH" ]; then
       echo "ERROR $design_PATH... DOES NOT EXIST"
     else 
-       got_path=0;
+       design_PATH="$(echo "$design_PATH/$sky_NAME/")" 
+       f=0
      fi
 done
+
+
+
 
 printf "Enter password for logging into environment via vnc: "
 
@@ -58,6 +65,7 @@ sed -i "1s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop
 chmod +x /home/$name/Desktop/EFABLESS
+chown $name:$name /home/$name/Desktop/EFABLESS
   
 clear
 echo "#### Pulling efabless image, this make take a while ####" 
@@ -72,20 +80,25 @@ sleep 2
 
 clear
 
-got_path=1;
-while  ! [ got_path ]; do 
-    printf "Enter desired Path for Precheck installation folder: "
+f=1
+
+
+while [ $f -eq 1 ] ; do 
+   printf "Enter desired path for precheck folder: "
 
     read -r precheck_PATH
     ## Remove spaces in case user added them
     precheck_PATH="$(echo "${precheck_PATH// /}")" 
     
+
     if ! [ -d "$precheck_PATH" ]; then
-      echo "ERROR!,  $precheck_path... DOES NOT EXIST"
+      echo "ERROR $precheck_PATH... DOES NOT EXIST"
     else 
-       got_path=0;
+       f=0
      fi
 done
+
+
 
 cd $precheck_PATH
 git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
