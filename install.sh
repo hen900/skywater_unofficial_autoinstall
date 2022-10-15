@@ -61,9 +61,9 @@ read -r name
 
 sed -i "1s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
-sed -i "1s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
+sed -i "2s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
 
-cp ./EFABLESS /home/$name/Desktop
+cp ./EFABLESS /home/$name/Desktop/.EFABLESS
 chmod +x /home/$name/Desktop/.EFABLESS
 echo "pkexec ./.EFABLESS" > /home/$name/Desktop/start_environment
 
