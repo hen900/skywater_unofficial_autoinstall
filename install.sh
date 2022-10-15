@@ -65,7 +65,7 @@ sed -i "3s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop/.EFABLESS
 chmod +x /home/$name/Desktop/.EFABLESS
-echo "pkexec ./.EFABLESS" > /home/$name/Desktop/start_environment
+echo "pkexec /home/$name/Desktop/.EFABLESS" > /home/$name/Desktop/start_environment
 
 chmod +x /home/$name/Desktop/start_environment
 chown $name:$name /home/$name/Desktop/start_environment
@@ -74,7 +74,7 @@ chown $name:$name /home/$name/Desktop/.EFABLESS
 clear
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
-  
+docker pull efabless/foss-asic-tools:latest
   
   
 clear 
@@ -84,8 +84,6 @@ sleep 2
 clear
 
 f=1
-
-
 while [ $f -eq 1 ] ; do 
    printf "Enter desired path for precheck folder: "
 
