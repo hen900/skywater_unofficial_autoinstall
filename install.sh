@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-#Docker  and dependencies 
+#Docker  nd dependencies 
 
 #remove old versions
 apt-get -y remove docker docker-engine docker.io containerd runc
@@ -21,6 +21,7 @@ apt-get -y install \
     tigervnc-viewer \
     make \
     pip \
+    curl \
     
     
 
@@ -29,14 +30,17 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   apt-get -y update
-  apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin gksu
+  apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin 
 
-got_path = 1;
+got_path=1;
 
 while  ! [ got_path ]; do 
    printf "Enter desired path for design folder: "
 
     read -r design_PATH
+    ## Remove spaces in case user added them
+    design_PATH="$(echo "${design_PATH// /}")" 
+    
 
     if ! [ -d "$design_PATH" ]; then
       echo "ERROR $design_PATH... DOES NOT EXIST"
@@ -77,12 +81,14 @@ sleep 2
 
 clear
 
-got_path = 1;
+got_path=1;
 while  ! [ got_path ]; do 
     printf "Enter desired Path for Precheck installation folder: "
 
     read -r precheck_PATH
-
+    ## Remove spaces in case user added them
+    precheck_PATH="$(echo "${precheck_PATH// /}")" 
+    
     if ! [ -d "$precheck_PATH" ]; then
       echo "ERROR!,  $precheck_path... DOES NOT EXIST"
     else 
