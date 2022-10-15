@@ -101,6 +101,10 @@ while [ $f -eq 1 ] ; do
      fi
 done
 
+mkdir $precheck_PATH/pdks
+
+cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/ $precheck_PATH/pdks
+sed -i "16s/^/export PDK_ROOT?=/$precheck_PATH/pdks\n /" ./EFABLESS 
 
 
 cd $precheck_PATH
