@@ -65,10 +65,10 @@ sed -i "3s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop/.EFABLESS
 chmod +x /home/$name/Desktop/.EFABLESS
-echo "pkexec /home/$name/Desktop/.EFABLESS" > /home/$name/Desktop/start_environment
+echo "pkexec /home/$name/Desktop/.EFABLESS" > /home/$name/Desktop/start_environment.sh
 
-chmod +x /home/$name/Desktop/start_environment
-chown $name:$name /home/$name/Desktop/start_environment
+chmod +x /home/$name/Desktop/start_environment.sh
+chown $name:$name /home/$name/Desktop/start_environment.sh
 chown $name:$name /home/$name/Desktop/.EFABLESS
  
 clear
