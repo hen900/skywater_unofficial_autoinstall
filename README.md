@@ -1,4 +1,4 @@
-# skywater_unofficial-
+# skywater_unofficial_autoinstall
 
 ## Automatic Installation Script for the Skywater PDK and MPW-Precheck
 
