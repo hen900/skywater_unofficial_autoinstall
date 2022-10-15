@@ -104,12 +104,13 @@ done
 mkdir $precheck_PATH/pdks
 
 cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/ $precheck_PATH/pdks
-sed -i "16s/^/export PDK_ROOT?=/$precheck_PATH/pdks\n /" ./EFABLESS 
+sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/ 
 
 
 cd $precheck_PATH
 git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
+sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/ " Makefile
 make install
 
 
