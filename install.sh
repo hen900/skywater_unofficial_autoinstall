@@ -101,7 +101,7 @@ done
 
 mkdir $precheck_PATH/pdks
 
-cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/$precheck_PATH/pdks
+cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/  $precheck_PATH/pdks
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/ 
 
 
