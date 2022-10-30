@@ -60,7 +60,7 @@ cp ./EFABLESS /home/$name/Desktop/EFABLESS
 
 
 chmod +x /home/$name/Desktop/EFABLESS
-chown $name:$name /home/$name/Desktop/.EFABLESS
+chown $name:$name /home/$name/Desktop/EFABLESS
  
 
 echo "#### Pulling efabless image, this make take a while ####" 
