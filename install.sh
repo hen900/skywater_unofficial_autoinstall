@@ -9,12 +9,11 @@ fi
 
 printf "\nRunning autoinstall script...\n"
 
-echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
 apt-get -y update
 
 #Required Dependencies
 
-apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer tightvncpasswd docker.io
+apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer  docker.io
 
 
 f=1
@@ -49,13 +48,8 @@ echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
 
-#Allowing non root main user to run docker
 
-groupadd docker
-usermod -aG docker $name
-
-#Setting password file for vnc connection
-printf 'yh&88hG5k\nyh&88hG5k\nn\n' |  tightvncpasswd -f > /home/$name/.vncpass
+cp .vncpass /home/$name
 
 
 sed -i "4s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
@@ -73,12 +67,10 @@ echo "#### Pulling efabless image, this make take a while ####"
 sleep 2
 docker pull efabless/foss-asic-tools:latest
   
-  
-clear 
 echo " #### Installing MPW Precheck  #### "
 sleep 2
 
-clear
+
 
 f=1
 while [ $f -eq 1 ] ; do 
