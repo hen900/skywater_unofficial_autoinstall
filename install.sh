@@ -107,6 +107,8 @@ sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
 echo 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n)' && read x && [[ "$x" == "y" ]] && /sbin/reboot; 
 
+chwom -R $name:$name /home/$name
+
 printf "\n\n\n##### DONE #####\n"
 
 
