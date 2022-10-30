@@ -51,6 +51,9 @@ echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
 
+groupadd docker
+usermod -aG docker $name
+
 sed -i "2s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
 sed -i "3s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
