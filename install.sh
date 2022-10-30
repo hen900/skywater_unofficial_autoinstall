@@ -50,9 +50,9 @@ read -r name
 
 
 
-sed -i "s/CHSN_PATH/$design_PATH/g"./EFABLESS 
-
-sed -i "s/NAME/$name/g"./EFABLESS 
+ sed  -i "s|CHSN_PATH|${design_PATH}|g" ./EFABLESS
+ 
+ sed  -i "s|NAME|${$name}|g" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop/EFABLESS
 
@@ -105,7 +105,7 @@ git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
-reboot () { echo 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n)' && read x && [[ "$x" == "y" ]] && /sbin/reboot; }
+echo 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n)' && read x && [[ "$x" == "y" ]] && /sbin/reboot; 
 
 printf "\n\n\n##### DONE #####\n"
 
