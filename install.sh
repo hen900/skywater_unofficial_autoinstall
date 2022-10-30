@@ -6,14 +6,20 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
- apt-get -y update
+
+
+
+apt-get -y update
     
+cat dependencies.list | xargs apt-get -y install
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  apt-get -y update
   apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin 
+
 
 f=1
 clear
@@ -36,12 +42,6 @@ while [ $f -eq 1 ] ; do
      fi
 done
 
-
-
-
-printf "Enter password for logging into environment via vnc: "
-
-read -r PASS
 
 mkdir $design_PATH
  
