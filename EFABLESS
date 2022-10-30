@@ -3,6 +3,7 @@
 if [ "$(docker ps | grep efabless_container)" ]; then
 	if [ "$( zenity  --question --text="Efabless Container is already running, do you wish to restart it?")" ]; then
 		export DESIGNS=CHSN_PATH
+		killall -9 docker
 		docker stop efabless_container
 		docker rm efabless_container
 		docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=yh288hG5k -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
