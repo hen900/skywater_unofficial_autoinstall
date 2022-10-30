@@ -52,7 +52,7 @@ read -r name
 
  sed  -i "s|CHSN_PATH|${design_PATH}|g" ./EFABLESS
  
- sed  -i "s|NAME|${$name}|g" ./EFABLESS
+ sed  -i "s|NAME|${name}|g" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop/EFABLESS
 
