@@ -13,7 +13,7 @@ apt-get -y update
 
 #Required Dependencies
 
-apt install ca-certificates lsb-release make python3-pip xtightvncviewer gvncviewer tigervnc-common docker.io 
+apt install ca-certificates lsb-release make python3-pip xtightvncviewer gvncviewer tigervnc-common tigervnc-tools docker.io 
 
 
 
