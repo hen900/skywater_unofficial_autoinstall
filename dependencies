@@ -2,7 +2,6 @@ ca-certificates
 curl
 gnupg
 lsb-release
-git
 make
 python-pip
 gpg
