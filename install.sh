@@ -14,7 +14,7 @@ apt-get -y update
 
 #Required Dependencies
 
-apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer tightvncpasswd
+apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer tightvncpasswd docker.io
 
 
 f=1
