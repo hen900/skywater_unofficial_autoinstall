@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
   echo "Exiting..."
   exit
 fi
-                                                                                                           ";
+                                                                                                          
 
 printf "\nRunning autoinstall script...\n"
 
