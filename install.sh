@@ -62,12 +62,10 @@ sed -i "4s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS
 
 sed -i "3s/^/NAME=$name\n /" ./EFABLESS 
 
-cp ./EFABLESS /home/$name/Desktop/.EFABLESS
-chmod +x /home/$name/Desktop/.EFABLESS
-echo "pkexec /home/$name/Desktop/.EFABLESS" > /home/$name/Desktop/start_environment.sh
+cp ./EFABLESS /home/$name/Desktop/EFABLESS
 
-chmod +x /home/$name/Desktop/start_environment.sh
-chown $name:$name /home/$name/Desktop/start_environment.sh
+
+chmod +x /home/$name/Desktop/EFABLESS
 chown $name:$name /home/$name/Desktop/.EFABLESS
  
 clear
