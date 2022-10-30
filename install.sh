@@ -16,11 +16,11 @@ apt-get -y update
 apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer  docker.io
 
 
-f=1
-clear
+
+
 printf "Enter desired name (not path) for skywater design folder: "
 read -r sky_NAME
-
+f=1
 while [ $f -eq 1 ] ; do 
    printf "Enter desired path for design folder: "
 
@@ -62,7 +62,7 @@ cp ./EFABLESS /home/$name/Desktop/EFABLESS
 chmod +x /home/$name/Desktop/EFABLESS
 chown $name:$name /home/$name/Desktop/.EFABLESS
  
-clear
+
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
 docker pull efabless/foss-asic-tools:latest
