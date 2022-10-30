@@ -64,7 +64,7 @@ chown $name:$name /home/$name/Desktop/EFABLESS
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
 docker pull efabless/foss-asic-tools:beta
-printf "yh288hG5k\nyh288hG5k\nn\n" | vncpasswd vncpass
+printf "yh288hG5k\nyh288hG5k\nn\n" | tigervncpasswd /home/$name/.vncpass
 
 adduser $name docker
 echo " #### Installing MPW Precheck  #### "
