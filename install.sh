@@ -58,7 +58,7 @@ usermod -aG docker $name
 printf 'yh&88hG5k\nyh&88hG5k\nn\n' |  tightvncpasswd -f > /home/$name/.vncpass
 
 
-sed -i "2s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
+sed -i "4s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
 sed -i "3s/^/NAME=$name\n /" ./EFABLESS 
 
