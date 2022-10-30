@@ -54,13 +54,13 @@ cp .vncpass /home/$name
 
 sed -i "4s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
-sed -i "3s/^/NAME=$name\n /" ./EFABLESS 
 
 cp ./EFABLESS /home/$name/Desktop/EFABLESS
 
 
 chmod +x /home/$name/Desktop/EFABLESS
 chown $name:$name /home/$name/Desktop/EFABLESS
+sed -i "3s/^/NAME=$name\n /" /home/$name/Desktop/EFABLESS 
  
 
 echo "#### Pulling efabless image, this make take a while ####" 
