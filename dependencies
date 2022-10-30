@@ -6,10 +6,6 @@ git
 make
 python-pip
 gpg
-libc6
-libgcc-s1
-libgdk-pixbuf-2.0-0 
-libglib2.0-0
-libgtk-3-0 
-libgtk-vnc-2.0-0
-libgvnc-1.0-0
+xtightvncviewer
+gvncviewer
+xtightvncpasswd
