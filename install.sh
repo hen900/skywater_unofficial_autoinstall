@@ -6,11 +6,19 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+echo "                                                                                                                                 ";
+echo " _____   _              _____ _____ __ __ _ _ _ _ _ _ _____ _____ _____ _____    _____     _       _         _       _ _         ";
+echo "|  _  |_| |___ _____   |   __|  |  |  |  | | | | | | |  _  |_   _|   __| __  |  |  _  |_ _| |_ ___|_|___ ___| |_ ___| | |___ ___ ";
+echo "|     | . | .'|     |  |__   |    -|_   _| | | | | | |     | | | |   __|    -|  |     | | |  _| . | |   |_ -|  _| .'| | | -_|  _|";
+echo "|__|__|___|__,|_|_|_|  |_____|__|__| |_| |_____|_____|__|__| |_| |_____|__|__|  |__|__|___|_| |___|_|_|_|___|_| |__,|_|_|___|_|  ";
+echo "                                                                                                                                 ";
 
+echo "\nRunning autoinstall script...\n"
 
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
 apt-get -y update
 
+#Required Dependencies
 
 apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer tightvncpasswd
 
@@ -45,9 +53,12 @@ echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
 
+#Allowing non root main user to run docker
+
 groupadd docker
 usermod -aG docker $name
 
+#Setting password file for vnc connection
 printf 'yh&88hG5k\nyh&88hG5k\nn\n' |  tightvncpasswd -f > /home/$name/.vncpass
 
 
@@ -91,8 +102,12 @@ while [ $f -eq 1 ] ; do
      fi
 done
 
+#installing precheck
+
 mkdir $precheck_PATH/pdks
 
+
+#using the pdk already downloaded for the efabless design environment
 cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/  $precheck_PATH/pdks
 
 
