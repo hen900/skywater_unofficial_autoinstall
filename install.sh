@@ -94,7 +94,7 @@ mkdir $precheck_PATH/pdks
 
 
 #using the pdk already downloaded for the efabless design environment
-echo "Copying pdk..."
+printf "\n\nCopying pdk, this may take a while...\n\n"
 
 cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/  $precheck_PATH/pdks
 
