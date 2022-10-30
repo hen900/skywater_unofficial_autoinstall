@@ -5,15 +5,9 @@ if [ "$EUID" -ne 0 ]
   echo "Exiting..."
   exit
 fi
+                                                                                                           ";
 
-echo "                                                                                                                                 ";
-echo " _____   _              _____ _____ __ __ _ _ _ _ _ _ _____ _____ _____ _____    _____     _       _         _       _ _         ";
-echo "|  _  |_| |___ _____   |   __|  |  |  |  | | | | | | |  _  |_   _|   __| __  |  |  _  |_ _| |_ ___|_|___ ___| |_ ___| | |___ ___ ";
-echo "|     | . | .'|     |  |__   |    -|_   _| | | | | | |     | | | |   __|    -|  |     | | |  _| . | |   |_ -|  _| .'| | | -_|  _|";
-echo "|__|__|___|__,|_|_|_|  |_____|__|__| |_| |_____|_____|__|__| |_| |_____|__|__|  |__|__|___|_| |___|_|_|_|___|_| |__,|_|_|___|_|  ";
-echo "                                                                                                                                 ";
-
-echo "\nRunning autoinstall script...\n"
+printf "\nRunning autoinstall script...\n"
 
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
 apt-get -y update
@@ -119,7 +113,7 @@ git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
-echo "\n\n\n##### DONE #####"
+printf "\n\n\n##### DONE #####"
 
 
  
