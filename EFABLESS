@@ -5,16 +5,16 @@ if [ "$(docker ps | grep efabless_container)" ]; then
 		export DESIGNS=$CHSN_PATH
 		docker stop efabless_container
 		docker rm efabless_container
-		docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=$CHSN_PASSWD -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
+		docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=yh&88hG5k -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
 	fi
 
 else
 	docker rm efabless_container
 	export DESIGNS=$CHSN_PATH
-	docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=$CHSN_PASSWD -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
+	docker run -it -d --name efabless_container -p 5901:5901 --user $(id -u):$(id -g) -v $DESIGNS:/foss/designs -e VNC_PW=yh&88hG5k -e VNC_RESOLUTION=1920x1080 	efabless/foss-asic-tools:beta bash
 
 fi
 
 zenity --info --text="Opening vnc connection to container..."
-vncviewer 127.0.0.1:5901
+vncviewer --passwd /home/$name/.vncpass 127.0.0.1:5901
 
