@@ -10,8 +10,7 @@ fi
 
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
 apt-get -y update
-    
-cat dependencies.list | xargs apt-get -y install
+
 
 apt install ca-certificates lsb-release make python-pip xtightvncviewer gvncviewer tightvncpasswd
 
