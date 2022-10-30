@@ -65,7 +65,7 @@ echo "#### Pulling efabless image, this make take a while ####"
 sleep 2
 docker pull efabless/foss-asic-tools:beta
 
-useradd $name docker
+adduser $name docker
 echo " #### Installing MPW Precheck  #### "
 sleep 2
 
