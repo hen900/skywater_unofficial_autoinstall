@@ -13,7 +13,7 @@ apt-get -y update
 
 #Required Dependencies
 
-apt install ca-certificates lsb-release make python3-pip xtightvncviewer gvncviewer  docker.io
+apt install ca-certificates lsb-release make python3-pip xtightvncviewer gvncviewer tigervnc-common docker.io 
 
 
 
@@ -64,6 +64,7 @@ chown $name:$name /home/$name/Desktop/EFABLESS
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
 docker pull efabless/foss-asic-tools:beta
+printf "'yh&88hG5k'\n'yh&88hG5k'\nn\n" | vncpasswd vncpass
 
 adduser $name docker
 echo " #### Installing MPW Precheck  #### "
