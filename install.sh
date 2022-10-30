@@ -64,7 +64,8 @@ chown $name:$name /home/$name/Desktop/EFABLESS
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
 docker pull efabless/foss-asic-tools:beta
-  
+
+useradd $name docker
 echo " #### Installing MPW Precheck  #### "
 sleep 2
 
