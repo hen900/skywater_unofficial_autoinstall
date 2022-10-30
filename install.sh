@@ -92,6 +92,8 @@ mkdir $precheck_PATH/pdks
 
 
 #using the pdk already downloaded for the efabless design environment
+echo "Copying pdk..."
+
 cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/  $precheck_PATH/pdks
 
 
@@ -101,7 +103,7 @@ git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
-printf "\n\n\n##### DONE #####"
+printf "\n\n\n##### DONE #####\n"
 
 
  
