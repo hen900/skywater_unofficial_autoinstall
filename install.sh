@@ -48,7 +48,9 @@ done
 mkdir $design_PATH
  
 export DESIGNS=$design_PATH
-    
+
+gsettings set org.gnome.nautilus.preferences executable-text-activation 'launch'
+
 echo "## Adding shortcut to desktop... ###"
 printf "\nEnter username of non root main user: "
 read -r name
@@ -117,7 +119,7 @@ git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
-echo "#####DONE#####"
+echo "\n\n\n##### DONE #####"
 
 
  
