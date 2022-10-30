@@ -59,7 +59,7 @@ printf 'yh&88hG5k\nyh&88hG5k\nn\n' |  tightvncpasswd -f > /home/$name/.vncpass
 
 sed -i "2s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
 
-sed -i "3s/^/CHSN_PASSWD=$PASS\n /" ./EFABLESS 
+sed -i "3s/^/NAME=$name\n /" ./EFABLESS 
 
 cp ./EFABLESS /home/$name/Desktop/.EFABLESS
 chmod +x /home/$name/Desktop/.EFABLESS
