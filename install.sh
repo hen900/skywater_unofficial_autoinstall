@@ -49,7 +49,6 @@ printf "\nEnter username of non root main user: "
 read -r name
 
 
-cp .vncpass /home/$name
 
 
 sed -i "4s/^/CHSN_PATH=$design_PATH\n /" ./EFABLESS 
