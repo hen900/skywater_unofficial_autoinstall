@@ -7,3 +7,4 @@ xtightvncviewer
 make
 python-pip
 gpg
+tightvncpasswd
