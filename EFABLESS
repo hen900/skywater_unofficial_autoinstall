@@ -16,5 +16,5 @@ else
 fi
 
 zenity --info --text="Opening vnc connection to container..."
-vncviewer --passwd /home/NAME/.vncpass 127.0.0.1:5901
+vncviewer --passwd /home/$NAME/.vncpass 127.0.0.1:5901
 
