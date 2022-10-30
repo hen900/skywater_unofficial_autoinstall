@@ -65,7 +65,7 @@ sed -i "3s/^/NAME=$name\n /" /home/$name/Desktop/EFABLESS
 
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
-docker pull efabless/foss-asic-tools:latest
+docker pull efabless/foss-asic-tools:beta
   
 echo " #### Installing MPW Precheck  #### "
 sleep 2
