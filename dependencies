@@ -1,1 +1,9 @@
-
+ca-certificates
+curl
+gnupg
+lsb-release
+git
+xtightvncviewer
+make
+python-pip
+curl
