@@ -107,7 +107,7 @@ cd $precheck_PATH
 git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
-make install
+make precheck
 
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
