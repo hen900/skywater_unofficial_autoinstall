@@ -5,7 +5,7 @@
 https://github.com/efabless/mpw_precheck <p>
 https://hub.docker.com/r/efabless/foss-asic-tools <p>
 https://github.com/efabless/foss-asic-tools <p>
-This script is expected to be run on Linux and has been tested with Ubuntu 20.2
+**This script is expected to be run on Linux and has been tested with Ubuntu 20.2**
 
 All there is to do is install git, download the repository, and run 
 ```
