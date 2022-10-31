@@ -7,8 +7,11 @@ https://hub.docker.com/r/efabless/foss-asic-tools <p>
 https://github.com/efabless/foss-asic-tools <p>
 This script is expected to be run on Linux and has been tested with Ubuntu 20.2
 
-All there is to do is download the repository and run 
+All there is to do is install git, download the repository, and run 
 ```
+sudo apt install git
+git clone https://github.com/hen900/skywater_unofficial_autoinstall
+cd skywater_unofficial_autoinstall
 chmod +x install.sh
 sudo ./install.sh
 ```
