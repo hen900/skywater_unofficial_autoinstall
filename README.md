@@ -5,6 +5,9 @@
 [Official Precheck Documentation](https://github.com/efabless/mpw_precheck) <p>
 [Official foss-asic-tools Docker](https://hub.docker.com/r/efabless/foss-asic-tools) <p>
 [Official foss-asic-tools Documentation](https://github.com/efabless/foss-asic-tools) <p>
+ 
+ 
+ The purpose of this script is to automate the installation of the skywater design environment provided by foss-asic.<p>
 **This script can only be run on Linux and has been tested with Ubuntu 20.2**<p>
 **This software installed uses about 15GB of storage**<p>
  All there is to do is install git, download the repository, and run 
