@@ -21,7 +21,7 @@ Upon complettion, the script will place a file named EFABLESS in the users Deskt
  ### Running efabless Environment
 To start/access the docker environment, execute ~/Desktop/EFABLESS. <p>
 It should be possible to execute the file from the desktop by double clicking or selecting "Run as a Program" <p>
-A VNC connection will open to the design environment. Make sure to store all designs in the design folder specified earlier in the installation
+A VNC connection will open to the design environment. Any files placed in /foss/designs inside VNC will appear locally in the design folder specified earlier in the installation<p>
 
 ### Running Precheck
 
