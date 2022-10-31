@@ -39,9 +39,9 @@ done
 
 
 mkdir $design_PATH
- 
 export DESIGNS=$design_PATH
 
+#Makes it so that executables can be run from GUI
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'launch'
 
 echo "## Adding shortcut to desktop... ###"
@@ -49,13 +49,12 @@ printf "\nEnter username of non root main user: "
 read -r name
 
 
+#Loads in custom params into startup file
 
- sed  -i "s|CHSN_PATH|${design_PATH}|g" ./EFABLESS
- 
+sed  -i "s|CHSN_PATH|${design_PATH}|g" ./EFABLESS
  sed  -i "s|NAME|${name}|g" ./EFABLESS
 
 cp ./EFABLESS /home/$name/Desktop/EFABLESS
-
 chmod +x /home/$name/Desktop/EFABLESS
 chown $name:$name /home/$name/Desktop/EFABLESS
 
@@ -64,8 +63,12 @@ chown $name:$name /home/$name/Desktop/EFABLESS
 echo "#### Pulling efabless image, this make take a while ####" 
 sleep 2
 docker pull efabless/foss-asic-tools:beta
+
+#Generates vncpasswd file 
 printf "yh288hG5k\nyh288hG5k\nn\n" | tigervncpasswd /home/$name/.vncpass
 
+
+#adds user to docker group to avoid running as root
 adduser $name docker
 echo " #### Installing MPW Precheck  #### "
 sleep 2
@@ -106,6 +109,7 @@ cd caravel_user_project_analog
 sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
 make install
 
+#fixes ownership of files created by root
 chown -R $name:$name /home/$name
 printf 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n): ' && read x && [[ "$x" == "y" ]] && /sbin/reboot; 
 
