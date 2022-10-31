@@ -19,7 +19,7 @@ Users will have to give an installation directory path for precheck and skywater
 Users will also set the password for the PDK environment <p>
 Upon complettion. the script will place a file named start_environment in the users Desktop Directory <p>
  
- ###Running efabless Environment
+ ### Running efabless Environment
 To start/access the docker environment, execute ~/Desktop/EFABLESS. <p>
 It should be possible to execute the file from the desktop by double clicking or selecting "Run as a Program" <p>
 A VNC connection will open to the design environment. Make sure to store all designs in the design folder specified earlier in the installation
