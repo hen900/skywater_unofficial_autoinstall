@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##This is not meant to be permanent but is a dirty way around some errors I was having with the efabless docker image
+
 if [ "$(docker ps | grep efabless_container)" ]; then
 	if [ "$( zenity  --question --text="Efabless Container is already running, do you wish to restart it?")" ]; then
 		export DESIGNS=CHSN_PATH
