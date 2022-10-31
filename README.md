@@ -16,8 +16,7 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 Users will have to give an installation directory path for precheck and skywater <p>
-Users will also set the password for the PDK environment <p>
-Upon complettion. the script will place a file named start_environment in the users Desktop Directory <p>
+Upon complettion. the script will place a file named EFABLESS in the users Desktop Directory <p>
  
  ### Running efabless Environment
 To start/access the docker environment, execute ~/Desktop/EFABLESS. <p>
