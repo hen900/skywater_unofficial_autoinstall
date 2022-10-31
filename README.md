@@ -20,3 +20,17 @@ Users will also set the password for the PDK environment <p>
 Upon complettion. the script will place a file named start_environment in the users Desktop Directory <p>
 To start/access the docker environment, execute ~/Desktop/start_environment. <p>
 A VNC connection will open to the design environment. Make sure to store all designs in the design folder specified earlier in the installation
+
+### Running Precheck
+
+
+Running precheck is a little peculiar, but it is straightforward. There is a “wrapper” file
+located in caravel_user_project_analog/gds. The file is named
+user_analog_project_wrapper.gds. The design is placed inside this file without
+changing its name, and precheck is run from the command line using make.
+
+Once a design has been placed inside this wrapper and saved, cd back to
+caravel_user_project_analog/ and run the following command:
+```
+ sudo make run-precheck
+```
