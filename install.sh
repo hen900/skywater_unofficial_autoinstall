@@ -112,9 +112,6 @@ make install
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
 printf 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n): ' && read x && [[ "$x" == "y" ]] && /sbin/reboot; 
-
-
-
 printf "\n\n\n##### DONE #####\n"
 
 
