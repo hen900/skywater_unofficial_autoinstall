@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#first arg is caravel working directory second arg is pdk root
+git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
+cd caravel_user_project_analog 
 
-cd $1
 export PDK_ROOT=$1
 export PDK=sky130B
 
