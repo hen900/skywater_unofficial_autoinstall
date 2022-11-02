@@ -37,5 +37,5 @@ changing its name, and precheck is run from the command line using make.
 Once a design has been placed inside this wrapper and saved, cd back to
 caravel_user_project_analog/ and run the following command:
 ```
- sudo make run-precheck
+ make run-precheck
 ```
