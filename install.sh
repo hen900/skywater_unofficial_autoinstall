@@ -70,44 +70,26 @@ printf "yh288hG5k\nyh288hG5k\nn\n" | tigervncpasswd /home/$name/.vncpass
 
 #adds user to docker group to avoid running as root
 adduser $name docker
+
 echo " #### Installing MPW Precheck  #### "
 sleep 2
 
 
+mkdir $design_PATH/precheck_pdk_root
 
-f=1
-while [ $f -eq 1 ] ; do 
-   printf "Enter desired path for precheck folder: "
+cd $design_PATH
 
-    read -r precheck_PATH
-    ## Remove spaces in case user added them
-    precheck_PATH="$(echo "${precheck_PATH// /}")" 
-    
-
-    if ! [ -d "$precheck_PATH" ]; then
-      echo "ERROR $precheck_PATH... DOES NOT EXIST"
-    else 
-       f=0
-     fi
-done
-
-#installing precheck
-
-mkdir $precheck_PATH/pdks
-
-
-#using the pdk already downloaded for the efabless design environment
-printf "\n\nCopying pdk, this may take a while...\n\n"
-
-cp -R /var/lib/docker/overlay2/*/diff/foss/pdks/  $precheck_PATH/pdks
-
-
-
-cd $precheck_PATH
 git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
 cd caravel_user_project_analog 
-sed -i "1i export PDK_ROOT?=/$precheck_PATH/pdks/" Makefile
+
+
+export PDK_ROOT=$design_PATH/precheck_pdk_root
+export PDK=sky130B
+
+make install
+make pdk-with-volare
 make precheck
+
 
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
