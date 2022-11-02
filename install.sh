@@ -74,25 +74,15 @@ adduser $name docker
 echo " #### Installing MPW Precheck  #### "
 sleep 2
 
+chmod +x ./precheck_helper
 
 mkdir $design_PATH/precheck_pdk_root
 
-cd $design_PATH
-
-git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
-cd caravel_user_project_analog 
-
-
-export PDK_ROOT=$design_PATH/precheck_pdk_root
-export PDK=sky130B
-
-make install
-make pdk-with-volare
-make precheck
-
+runuser -l $name -g docker -c "./precheck_helper $design_PATH/precheck_pdk_root"
 
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
+
 printf 'To complete the installation, you must Reboot. Would you like to reboot now? (y/n): ' && read x && [[ "$x" == "y" ]] && /sbin/reboot; 
 printf "\n\n\n##### DONE #####\n"
 
