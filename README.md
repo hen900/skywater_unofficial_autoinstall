@@ -30,7 +30,7 @@ A VNC connection will open to the design environment. Any files placed in /foss/
 
 
 Running precheck is a little peculiar, but it is straightforward. There is a “wrapper” file
-located in caravel_user_project_analog/gds. The file is named
+located in your_design_dir/caravel_user_project_analog/gds. The file is named
 user_analog_project_wrapper.gds. The design is placed inside this file without
 changing its name, and precheck is run from the command line using make.
 
