@@ -8,7 +8,7 @@
  
  
  The purpose of this script is to automate the installation of the skywater design environment provided by foss-asic.<p>
-**This script can only be run on Linux and has been tested with Ubuntu 20.2**<p>
+**This script can only be run on Linux and has been tested with Ubuntu 20.2, >= python36.0 is required**<p>
 **This software installed uses about 15GB of storage**<p>
  All there is to do is install git, download the repository, and run 
 ```
