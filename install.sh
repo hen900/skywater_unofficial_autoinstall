@@ -76,11 +76,11 @@ sleep 2
 
 chmod +x ./precheck_helper
 
-mkdir $design_PATH/precheck_files
+
 
 #install precheck as user 
 curr_PATH="$(pwd)"
-runuser -l $name -g docker -c "$curr_PATH/precheck_helper $design_PATH/precheck_files"
+runuser -l $name -g docker -c "$curr_PATH/precheck_helper $design_PATH"
 
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
