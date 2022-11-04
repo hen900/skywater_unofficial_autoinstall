@@ -79,8 +79,8 @@ chmod +x ./precheck_helper
 mkdir $design_PATH/precheck_pdk_root
 
 #install precheck as user 
-
-runuser -l $name -g docker -c "./precheck_helper $design_PATH/precheck_pdk_root"
+curr_PATH=pwd
+runuser -l $name -g docker -c "$curr_PATH/precheck_helper $design_PATH/precheck_pdk_root"
 
 #fixes ownership of files created by root
 chown -R $name:$name /home/$name
