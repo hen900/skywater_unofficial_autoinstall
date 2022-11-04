@@ -3,9 +3,11 @@
 cd $1
 
 git clone -b mpw-7a https://github.com/efabless/caravel_user_project_analog
-cd caravel_user_project_analog 
+cd caravel_user_project_analog
 
-export PDK_ROOT=$1
+mkdir $1/precheck_PDKS
+export PRECHECK_ROOT=$1
+export PDK_ROOT=$1/precheck_PDKS
 export PDK=sky130B
 
 make install
